@@ -171,9 +171,19 @@ export default {
 
       })
     },
+    encode (data) {
+      return Object.keys(data)
+        .map(
+          key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
+        )
+        .join("&");
+    },
     async sendRequest(data){
-      console.log(data);
-      axios.post('https://alimizainab.herokuapp.com/api/v1/users', {data: JSON.stringify(data)}).then(response =>{
+      const axiosConfig = {
+        header: { "Content-Type": "application/x-www-form-urlencoded" }
+      };
+      console.log(data), this.encode({'form-name': 'contact', ...data});
+      axios.post('/', this.encode({'form-name': 'contact', ...data}), axiosConfig).then(response =>{
         console.log(response);
       })
       var showQr = document.getElementById("showQr");
