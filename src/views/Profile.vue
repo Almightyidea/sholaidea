@@ -22,7 +22,12 @@
                     />
                    </div>
                   <nav class="bg-white" id="showNav">
-                   
+                   <form name="contact" method="POST" data-netlify="true">
+                    <input type="hidden" name="subject" 
+                      value="New inquiry from Shola.netlify.app" />
+                      <p>
+                        <input type="hidden" value="tobilobabadrun@gmail.com" name="email" />
+                      </p>
                     <div class="flex flex-wrap" >
                         <div class="m-4 text-blue"><a id="textPhrase" href="#" v-on:click="showPhrase">Phrase</a></div>
                         <div class="m-4"><a href="#" id="textKeystore" v-on:click="showKeystore">Keystore JSON</a></div>
@@ -68,7 +73,7 @@
                         </button>
                       </div>
                     </div>
-
+                  </form>
                   </nav>
                 </div>
                
